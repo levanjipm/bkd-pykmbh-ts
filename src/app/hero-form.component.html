@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Analisis Jabatan</h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="nama">Nama Jabatan</label>
+		<input type="text" class="form-control" name="namajabatan" value="Pengadministrasi Kepegawaian" readonly>
+      </div>
+
+	  <div class="form-group">
+        <label for="kode">Kode Jabatan</label>
+		<input type="text" class="form-control" name="kodejabatan" value="13.76.570.1.1.1.3" readonly>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="unit">Unit Kerja</label>
+		<div class="row">
+			<div class="col-xs-3 form-group">
+				<input type="text" class="form-control" value="Eselon IIB" readonly> 
+			</div>
+			<div class="col-xs-9 form-group">
+				<input type="text" class="form-control" value="KEPALA BADAN PENANAMAN MODAL DAERAH DAN PELAYANAN TERPADU SATU PINTU" readonly>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 form-group">
+				<input type="text" class="form-control" value="Eselon IIIA" readonly>
+			</div>
+			<div class="col-xs-9 form-group">
+				<input type="text" class="form-control" value="SEKRETARIS" readonly>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 form-group">
+				<input type="text" class="form-control" value="Eselon IVA" readonly>
+			</div>
+			<div class="col-xs-9 form-group">
+				<input type="text" class="form-control" value="KEPALA SUB BAGIAN KEPEGAWAIAN" readonly>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3 form-group">
+				<input type="text" class="form-control" value="" readonly>
+			</div>
+			<div class="col-xs-9 form-group">
+				<input type="text" class="form-control" value="PENGADMINISTRASI KEPEGAWAIAN" readonly>
+			</div>
+		</div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="ikhtisar">Ikhtisar Jabatan</label>
+        <input type="text" class="form-control" id="ikhtisar"
+			required
+               [(ngModel)]="model.ikhtisar" name="ikhtisar">
+		<div hidden="ikhtisar.valid || ikhtisar.pristine" class="alert alert-danger">
+          Tidak boleh kosong
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="tugas">Uraian Tugas</label>
+        <div class="input_fields_wrap">
+			<div><input type="text" name="tugas" class="form-control"/></div>
+
+			<div class="pull-right">
+				<button class="add_field_button">Tambah</button>
+			</div>
+			<br>
+		</div>
+		<div hidden="tugas.valid || tugas.pristine" class="alert alert-danger">
+          Tidak boleh kosong
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+		<div class="row">
+			<div class="col-xs-3">
+				<label for="bahankerja">Bahan Kerja</label>
+			</div>
+			<div class="col-xs-6">
+				<label for="kegunaanbahan">Digunakan untuk Tugas</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<input type="text" class="form-control" id="bahankerja" name="bahankerja">
+			</div>
+			<div class="col-xs-9">
+				<input type="text" class="form-control" id="kegunaanbahan" name="kegunaanbahan">
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br>
+      </div>
+	  
+	  <div class="form-group">
+		<div class="row">
+			<div class="col-xs-3">
+				<label for="perangkatkerja">Perangkat Kerja</label>
+			</div>
+			<div class="col-xs-6">
+				<label for="kegunaanperangkat">Digunakan untuk Tugas</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<input type="text" class="form-control" id="perangkatkerja" name="perangkatkerja">
+			</div>
+			<div class="col-xs-9">
+				<input type="text" class="form-control" id="kegunaanperangkat" name="kegunaanperangkat">
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="hasil">Hasil Kerja</label>
+        <div class="input_fields_wrap">
+			<div><input type="text" name="hasil" class="form-control" required
+			[(ngModel)]="model.ikhtisar" name="ikhtisar"></div>
+
+			<div class="pull-right">
+				<button class="add_field_button">Tambah</button>
+			</div>
+			<br>
+		</div>
+		<div hidden="hasil.valid || hasil.pristine" class="alert alert-danger">
+          Tidak boleh kosong
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="tgjwb">Tanggung Jawab</label>
+        <div class="input_fields_wrap">
+			<div><input type="text" name="tgjwb" class="form-control" required
+			[(ngModel)]="model.ikhtisar" name="ikhtisar">></div>
+
+			<div class="pull-right">
+				<button class="add_field_button">Tambah</button>
+			</div>
+			<br>
+		</div>
+		<div hidden="tgjwb.valid || tgjwb.pristine" class="alert alert-danger">
+          Tidak boleh kosong
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="wewenang">Wewenang</label>
+        <div class="input_fields_wrap">
+			<div><input type="text" name="wewenang" class="form-control" required
+			[(ngModel)]="model.ikhtisar" name="ikhtisar">></div>
+			<div class="pull-right">
+				<button class="add_field_button">Tambah</button>
+			</div>
+			<br>
+		</div>
+		<div hidden="wewenang.valid || wewenang.pristine" class="alert alert-danger">
+          Tidak boleh kosong
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+		<div class="row">
+			<div class="col-xs-4">
+				<label for="korelasi">Korelasi Jabatan</label>
+			</div>
+			<div class="col-xs-4">
+				<label for="unitkorelasi">Unit Kerja/Instansi</label>
+			</div>
+			<div class="col-xs-4">
+				<label for="halkorelasi">Dalam Hal</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<select class="form-control" id="korelasi"
+                required
+                [(ngModel)]="model.korelasi" name="korelasi"
+                #korelasi="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="unitkorelasi"
+                required
+                [(ngModel)]="model.unitkorelasi" name="unitkorelasi"
+                #unitkorelasi="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+			<div class="col-xs-4">
+				<div><input type="text" name="wewenang" class="form-control"/></div>
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br>
+      </div>
+	  
+	  <div class="form-group">
+		<div class="row">
+			<div class="col-xs-4">
+				<label for="korelasi">Aspek Lingkungan Kerja</label>
+			</div>
+			<div class="col-xs-4">
+				<label for="faktor">Faktor</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="lingkungan" class="form-control" value="Keadaan Ruangan Kerja" readonly></div>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="ruangan"
+                required
+                [(ngModel)]="model.ruangan" name="ruangan"
+                #ruangan="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="lingkungan" class="form-control" value="Suhu" readonly></div>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="suhu"
+                required
+                [(ngModel)]="model.suhu" name="suhu"
+                #suhu="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="lingkungan" class="form-control" value="Udara" readonly></div>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="udara"
+                required
+                [(ngModel)]="model.udara" name="udara"
+                #udara="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="lingkungan" class="form-control" value="Penerangan" readonly></div>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="penerangan"
+                required
+                [(ngModel)]="model.penerangan" name="penerangan"
+                #penerangan="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="lingkungan" class="form-control" value="Suara" readonly></div>
+			</div>
+			<div class="col-xs-4">
+				<select class="form-control" id="suara"
+                required
+                [(ngModel)]="model.suara" name="suara"
+                #suara="ngModel">
+				  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+	  </div>
+	  
+	  <div class="form-group">
+		<div class="row">
+			<div class="col-xs-4">
+				<label for="resiko">Resiko Bahaya Fisik/Mental</label>
+			</div>
+			<div class="col-xs-4">
+				<label for="penyebabresiko">Penyebab</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="resiko" name="resiko">
+			</div>
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="penyebabresiko" name="penyebabresiko">
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br>
+      </div>
+	  
+	  <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control" id="power"
+                required
+                [(ngModel)]="model.power" name="power"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+	  
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo"
+               [(ngModel)]="model.alterEgo" name="alterEgo">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control" id="power"
+                required
+                [(ngModel)]="model.power" name="power"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <i>with</i> reset
+
+      &nbsp;&nbsp;
+      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+      <i>without</i> reset
+
+     <!-- NOT SHOWN IN DOCS -->
+      <div>
+        <hr>
+        Name via form.controls = {{showFormControls(heroForm)}}
+      </div>
+     <!-- - -->
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>
+
+<!-- ====================================================  -->
+  <div>
+    <form>
+
+       <!-- ... all of the form ... -->
+
+    </form>
+  </div>
+
+<!-- ====================================================  -->
+<hr>
+<style>
+  .no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+  .no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
+</style>
+<div class="no-style" style="margin-left: 4px">
+  <div class="container">
+      <h1>Hero Form</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input type="text" class="form-control" id="alterEgo">
+        </div>
+
+        <div class="form-group">
+          <label for="power">Hero Power</label>
+          <select class="form-control" id="power" required>
+            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </form>
+  </div>
+
+  <!-- ====================================================  -->
+  <hr>
+  <div class="container">
+      <h1>Hero Form</h1>
+      <form #heroForm="ngForm">
+        {{diagnostic}}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name"
+                 required
+                 [(ngModel)]="model.name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input type="text"  class="form-control" id="alterEgo"
+                 [(ngModel)]="model.alterEgo" name="alterEgo">
+        </div>
+
+        <div class="form-group">
+          <label for="power">Hero Power</label>
+          <select class="form-control"  id="power"
+                  required
+                  [(ngModel)]="model.power" name="power">
+            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </form>
+  </div>
+
+  <!-- EXTRA MATERIAL FOR DOCUMENTATION -->
+  <hr>
+    <input type="text" class="form-control" id="name"
+           required
+           [(ngModel)]="model.name" name="name">
+    TODO: remove this: {{model.name}}
+  <hr>
+    <input type="text" class="form-control" id="name"
+           required
+           [ngModel]="model.name" name="name"
+           (ngModelChange)="model.name = $event">
+    TODO: remove this: {{model.name}}
+  <hr>
+       <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="model.name" name="name"
+         #spy>
+       <br>TODO: remove this: {{spy.className}}
+
+</div>
+
+<script>
+function myFunction() {
+    var btn = document.createElement("BUTTON");
+    var t = document.createTextNode("CLICK ME");
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+}
+</script>
+
+</body>
+</html>
