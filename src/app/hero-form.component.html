@@ -289,7 +289,7 @@
 			<div class="col-xs-4">
 				<label for="resiko">Resiko Bahaya Fisik/Mental</label>
 			</div>
-			<div class="col-xs-4">
+			<div class="col-xs-8">
 				<label for="penyebabresiko">Penyebab</label>
 			</div>
 		</div>
@@ -297,7 +297,7 @@
 			<div class="col-xs-4">
 				<input type="text" class="form-control" id="resiko" name="resiko">
 			</div>
-			<div class="col-xs-4">
+			<div class="col-xs-8">
 				<input type="text" class="form-control" id="penyebabresiko" name="penyebabresiko">
 			</div>
 		</div>
@@ -307,70 +307,165 @@
       </div>
 	  
 	  <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="model.power" name="power"
-                #power="ngModel">
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
-        </div>
+	  <label for="syarat">Syarat Jabatan</label>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="pangkat" class="form-control" value="Pangkat/Golongan Ruang" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="pangkat"name="pangkat">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="pendidikan" class="form-control" value="Pendidikan" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="pendidikan "name="pendidikan">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="kursus" class="form-control" value="Kursus/diklat" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="jenjang"name="jenjang">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="teknis"name="teknis">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="pengalaman" value="Pengalaman Kerja" readonly>
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="pengalaman" name="pengalaman">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="pengetahuan" value="Pengetahuan Kerja" readonly>
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="pengetahuan" name="pengetahuan">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="keterampilan" value="Keterampilan Kerja" readonly>
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="keterampilan" name="keterampilan">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="bakat" class="form-control" value="Bakat Kerja" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="bakat"name="bakat">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br><br>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="minat" class="form-control" value="Minat Kerja" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="minat" name="minat">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br><br>
+		
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="tempramen" class="form-control" value="Tempramen Kerja" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="tempramen"name="tempramen">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br><br>
+		<div class="row">
+			<div class="col-xs-4">
+				<div><input type="text" name="fisik" class="form-control" value="Upaya Fisik" readonly></div>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="duduk"name="duduk">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="bicara"name="bicara">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="melihat"name="melihat">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" class="form-control" id="fungsi" value="Fungsi Pekerjaan" readonly>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="fungsi"name="fungsi">
+				<option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="pull-right">
+			<button class="add_field_button">Tambah</button>
+		</div><br><br>
       </div>
-	  
-      <div class="form-group">
-        <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" id="alterEgo"
-               [(ngModel)]="model.alterEgo" name="alterEgo">
-      </div>
-
-      <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="model.power" name="power"
-                #power="ngModel">
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
-        </div>
+	  <div class="form-group">
+        <label for="prestasi">Prestasi yang Diharapkan</label>
+        <div class="input_fields_wrap">
+			<div><input type="text" name="prestasi" class="form-control"/></div>
+			<div class="pull-right">
+				<button class="add_field_button">Tambah</button>
+			</div>
+			<br>
+		</div>
       </div>
 
       <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
-      <i>with</i> reset
-
-      &nbsp;&nbsp;
-      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
-      <i>without</i> reset
-
-     <!-- NOT SHOWN IN DOCS -->
-      <div>
-        <hr>
-        Name via form.controls = {{showFormControls(heroForm)}}
-      </div>
-     <!-- - -->
     </form>
-  </div>
-
-  <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9  pull-left">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Alter Ego</div>
-      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Power</div>
-      <div class="col-xs-9 pull-left">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
   </div>
 </div>
 
@@ -394,85 +489,6 @@
   border-left: 1px  solid #CCC
 }
 </style>
-<div class="no-style" style="margin-left: 4px">
-  <div class="container">
-      <h1>Hero Form</h1>
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="alterEgo">Alter Ego</label>
-          <input type="text" class="form-control" id="alterEgo">
-        </div>
-
-        <div class="form-group">
-          <label for="power">Hero Power</label>
-          <select class="form-control" id="power" required>
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
-
-      </form>
-  </div>
-
-  <!-- ====================================================  -->
-  <hr>
-  <div class="container">
-      <h1>Hero Form</h1>
-      <form #heroForm="ngForm">
-        {{diagnostic}}
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name"
-                 required
-                 [(ngModel)]="model.name" name="name">
-        </div>
-
-        <div class="form-group">
-          <label for="alterEgo">Alter Ego</label>
-          <input type="text"  class="form-control" id="alterEgo"
-                 [(ngModel)]="model.alterEgo" name="alterEgo">
-        </div>
-
-        <div class="form-group">
-          <label for="power">Hero Power</label>
-          <select class="form-control"  id="power"
-                  required
-                  [(ngModel)]="model.power" name="power">
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
-
-      </form>
-  </div>
-
-  <!-- EXTRA MATERIAL FOR DOCUMENTATION -->
-  <hr>
-    <input type="text" class="form-control" id="name"
-           required
-           [(ngModel)]="model.name" name="name">
-    TODO: remove this: {{model.name}}
-  <hr>
-    <input type="text" class="form-control" id="name"
-           required
-           [ngModel]="model.name" name="name"
-           (ngModelChange)="model.name = $event">
-    TODO: remove this: {{model.name}}
-  <hr>
-       <input type="text" class="form-control" id="name"
-         required
-         [(ngModel)]="model.name" name="name"
-         #spy>
-       <br>TODO: remove this: {{spy.className}}
-
-</div>
 
 <script>
 function myFunction() {
