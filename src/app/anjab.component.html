@@ -1,0 +1,422 @@
+<div class="container">
+	<h1>Analisis Jabatan</h1>
+	<form>
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" value="Pengadministrasi Kepegawaian" readonly>
+		</div>
+		
+		<div class="form-group">
+			<label for="kode">Kode Jabatan</label>
+			<input type="text" class="form-control" id="kode" value="13.76.570.1.1.1.3" readonly>
+		</div>
+		
+		<div class="form-group">
+			<label for="unit">Unit Kerja</label>
+			<div class="row">
+				<div class="col-xs-4">
+					<input *ngFor="let unit of unit_kerja" type="text" class="form-control" id="unit" [value]="unit.eselon" readonly>
+				</div>
+				<div class="col-xs-8">
+					<input *ngFor="let unit of unit_kerja" type="text" class="form-control" id="unit" [value]="unit.name" readonly>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="ikhtisar">Ikhtisar Jabatan</label>
+			<input type="text" class="form-control" id="ikhtisar">
+		</div>
+		
+		<div class="form-group">
+			<label for="tugas">Uraian Tugas</label>
+			<input *ngFor='let tugas of uraian_tugas' type="text" class="form-control" id="tugas">
+			<button (click)="addTugas()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="bahan">Bahan Kerja</label>
+				</div>
+				<div class="col-xs-6">
+					<label for="kegunaanbahan">Penggunaan dalam Tugas</label>
+				</div>
+			</div>
+			<div class="row" *ngFor='let bahan of bahan_kerja'>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="bahan">
+				</div>
+				<div class="col-xs-6">
+					<input type="text" class="form-control" id="kegunaan">
+				</div>
+			</div>
+			<button (click)="addBahan()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="alat">Perangkat/Alat Kerja</label>
+				</div>
+				<div class="col-xs-6">
+					<label for="kegunaanalat">Penggunaan dalam Tugas</label>
+				</div>
+			</div>
+			<div class="row" *ngFor='let alat of alat_kerja'>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="alat">
+				</div>
+				<div class="col-xs-6">
+					<input type="text" class="form-control" id="kegunaan">
+				</div>
+			</div>
+			<button (click)="addAlat()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<label for="hasil">Hasil Kerja</label>
+			<input *ngFor='let hasil of hasil_kerja' type="text" class="form-control" id="hasil">
+			<button (click)="addHasil()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<label for="tanggung">Tanggung Jawab</label>
+			<input *ngFor='let tanggung of tanggung_jawab' type="text" class="form-control" id="tanggung">
+			<button (click)="addTanggung()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<label for="wewenang">Wewenang</label>
+			<input *ngFor='let wewenang of wewenang' type="text" class="form-control" id="wewenang">
+			<button (click)="addWewenang()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="jabatan">Korelasi Jabatan</label>
+				</div>
+				<div class="col-xs-4">
+					<label for="unit">Unit Kerja</label>
+				</div>
+				<div class="col-xs-4">
+					<label for="hal">Dalam Hal</label>
+				</div>
+			</div>
+			<div class="row" *ngFor='let korelasi of korelasi'>
+				<div class="col-xs-4">
+					<select class="form-control" id="korelasi" required>
+					<option *ngFor="let korelasi of korelasi_jabatan" [value]="korelasi">{{korelasi}}</option>
+					</select>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="unit" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="hal">
+				</div>
+			</div>
+			<button (click)="addKorelasi()">Tambah</button>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="aspek">Aspek Lingkungan Kerja</label>
+				</div>
+				<div class="col-xs-4">
+					<label for="faktor">Faktor</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" name="lingkungan" class="form-control" value="Keadaan Ruangan Kerja" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="ruangan">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" name="lingkungan" class="form-control" value="Suhu" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="suhu">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" name="lingkungan" class="form-control" value="Udara" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="udara">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" name="lingkungan" class="form-control" value="Penerangan" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="penerangan">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" name="lingkungan" class="form-control" value="Suara" readonly>
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="suara">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="resiko">Resiko Bahaya</label>
+				</div>
+				<div class="col-xs-4">
+					<label for="penyebab">Penyebab</label>
+				</div>
+			</div>
+			<div class="row" *ngFor='let resiko of resiko'>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="resiko">
+				</div>
+				<div class="col-xs-4">
+					<input type="text" class="form-control" id="penyebab">
+				</div>
+			</div>
+			<button (click)="addResiko()">Tambah</button>
+		</div>
+		
+		<h4><b>Syarat Jabatan</b></h4>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="pangkat">Pangkat/Golongan Ruang</label>
+				</div>
+				<div class="col-xs-4">
+					<select class="form-control" id="golongan">
+						<option *ngFor="let golongan of golongan_ruang" [value]="golongan">{{golongan}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="pendidikan">Pendidikan</label>
+				</div>
+				<div class="col-xs-4">
+					<select class="form-control" id="pendidikan">
+						<option *ngFor="let pendidikan of pendidikan" [value]="pendidikan">{{pendidikan}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="fisik">Kursus/Diklat</label>
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="jenjang" value="Penjenjangan" readonly>
+				</div>
+				<div class="col-xs-2">
+					<select class="form-control" id="jenjang">
+						<option *ngFor="let jenjang of penjenjangan" [value]="jenjang">{{jenjang}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="teknis" value="Teknis" readonly>
+				</div>
+				<div class="col-xs-2">
+					<select class="form-control" id="teknis">
+						<option *ngFor="let teknis of teknis" [value]="teknis">{{teknis}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="pengalaman">Pengalaman Kerja</label>
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="pengalaman">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="pengetahuan">Pengetahuan Kerja</label>
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="pengetahuan">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="keterampilan">Keterampilan Kerja</label>
+				</div>
+				<div class="col-xs-8">
+					<input type="text" class="form-control" id="keterampilan">
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="bakat">Bakat Kerja</label>
+				</div>
+				<div class="col-xs-8 pull-right" *ngFor='let bakat of bakat'>
+					<select class="form-control" id="bakat">
+						<option *ngFor="let bakat of bakat_kerja" [value]="bakat">{{bakat}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-8">
+					<button (click)="addBakat()">Tambah</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="tempramen">Tempramen Kerja</label>
+				</div>
+				<div class="col-xs-8 pull-right" *ngFor='let tempramen of tempramen'>
+					<select class="form-control" id="tempramen">
+						<option *ngFor="let tempramen of tempramen_kerja" [value]="tempramen">{{tempramen}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-8">
+					<button (click)="addTempramen()">Tambah</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="minat">Minat Kerja</label>
+				</div>
+				<div class="col-xs-8 pull-right" *ngFor='let minat of minat'>
+					<select class="form-control" id="minat">
+						<option *ngFor="let minat of minat_kerja" [value]="minat">{{minat}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-8">
+					<button (click)="addMinat()">Tambah</button>
+				</div>
+			</div>	
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="fisik">Upaya Fisik</label>
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="duduk" value="Duduk" readonly>
+				</div>
+				<div class="col-xs-2">
+					<select class="form-control" id="duduk">
+						<option *ngFor="let duduk of SSJ" [value]="duduk">{{duduk}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="bicara" value="Berbicara" readonly>
+				</div>
+				<div class="col-xs-2">
+					<select class="form-control" id="bicara">
+						<option *ngFor="let bicara of SSJ" [value]="bicara">{{bicara}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-2">
+					<input type="text" class="form-control" id="lihat" value="Melihat" readonly>
+				</div>
+				<div class="col-xs-2">
+					<select class="form-control" id="lihat">
+						<option *ngFor="let lihat of SSJ" [value]="lihat">{{lihat}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="fungsi">Fungsi Pekerjaan</label>
+				</div>
+				<div class="col-xs-8 pull-right" *ngFor='let fungsi of fungsi'>
+					<select class="form-control" id="fungsi">
+						<option *ngFor="let fungsi of fungsi_kerja" [value]="fungsi">{{fungsi}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-8">
+					<button (click)="addFungsi()">Tambah</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="prestasi">Prestasi yang Diharapkan</label>
+				</div>
+				<div class="col-xs-8">
+					<input *ngFor='let prestasi of prestasi_kerja' type="text" class="form-control" id="prestasi">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+				</div>
+				<div class="col-xs-8">
+					<button (click)="addPrestasi()">Tambah</button>
+				</div>
+			</div>
+		</div>
+		
+	</form>
+</div>	
