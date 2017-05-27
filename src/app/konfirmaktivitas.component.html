@@ -1,0 +1,90 @@
+<div class="container">
+	<h1>Log Aktivitas</h1>
+	<h2>Tanggal: 28 Mei 2017</h2>
+	<br><br>
+	<form>
+		<div class="form-group">
+			<label for="nama">Nama PNS</label>
+			<input type="text" class="form-control" id="name" value="PNS#1152" readonly>
+		</div>
+		
+		<div class="form-group">
+			<label for="jabatan">Jabatan PNS</label>
+			<input type="text" class="form-control" id="jabatan" value="Pengadministrasi Kepegawaian" readonly>
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-5">
+					<label for="aktivitas">Aktivitas</label>
+				</div>
+				<div class="col-xs-1">
+					<label for="durasi">Durasi(jam)</label>
+				</div>
+				<div class="col-xs-6">
+					<label for="jobdesc">Tugas</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-5">
+					Aktivitas1 Aktivitas1 Aktivitas1Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1Aktivitas1 Aktivitas1 Aktivitas1
+				</div>
+				<div class="col-xs-1">
+					<input type="text" class="form-control" id="durasi" value="0.5" readonly>
+				</div>
+				<div class="col-xs-5">
+					Menyampaikan/mengantar surat ke alamat yang dituju sesuai prosedur dan meminta tanda bukti penerimaan sebagai bahan laporan ke pimpinan
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" id="checkbox-1"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-5">
+					Aktivitas2 Aktivitas1 Aktivitas1 Aktivitas1
+				</div>
+				<div class="col-xs-1">
+					<input type="text" class="form-control" id="durasi" value="1" readonly>
+				</div>
+				<div class="col-xs-5">
+					Melaksanakan kedinasan lain yang diperintahkan pimpinan baik tertulis maupun lisan
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" id="checkbox-1"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-5">
+					Aktivitas1 Aktivitas1 Aktivitas1212 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas1 Aktivitas
+				</div>
+				<div class="col-xs-1">
+					<input type="text" class="form-control" id="durasi" value="2" readonly>
+				</div>
+				<div class="col-xs-5">
+					Menyortir surat sesuai jenis dan ketentuan yang akan dikirim sesuai dengan wilayah tugasnya untuk mempermudah pengiriman pada pihak terkait
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" id="checkbox-1"/>
+				</div>
+			</div>
+			
+			<label for="pesan">Pesan</label>
+			<div class="row">
+				<div class="col-xs-11">
+					<input type="text" class="form-control" id="pesan">
+				</div>
+				<div class="col-xs-1 pull-right">
+					<button (click)="konfirmAktivitas()">Kirim</button>
+				</div>
+			</div>
+			
+			<br><br>
+			<div class="row">
+				<div class="col-xs-3">
+					<button (click)="konfirmKemarin()"><< Kemarin</button>
+					<button (click)="konfirmBesok()">Besok >></button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>	

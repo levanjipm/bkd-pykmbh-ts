@@ -8,10 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent }  from './app.component';
 import { AnjabComponent } from './anjab.component';
 import { InputAktivitasComponent } from './inputaktivitas.component';
+import { KonfirmAktivitasComponent } from './konfirmaktivitas.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, AppRoutingModule],
-  declarations: [ AppComponent, AnjabComponent, InputAktivitasComponent ],
+  declarations: [ AppComponent, AnjabComponent, InputAktivitasComponent, KonfirmAktivitasComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

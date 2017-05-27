@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Tugas } from './tugas';
 import { Unit } from './unit';
 
 @Component({
