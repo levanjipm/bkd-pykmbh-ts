@@ -1,0 +1,77 @@
+<div class="container">
+	<h1>Analisis Jabatan</h1>
+	
+	<br><br>
+	<form>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-3 offset-2">
+					<label for="aktivitas">Pilih SKPD</label>
+				</div>
+				<div class="col-xs-4">
+					<select class="form-control" id="skpd">
+						<option *ngFor="let skpd of skpd" [value]="skpd">{{skpd}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3 offset-2">
+					<label for="aktivitas">Pilih Jabatan</label>
+				</div>
+				<div class="col-xs-4">
+					<select class="form-control" id="jabatan">
+						<option *ngFor="let jabatan of jabatan" [value]="jabatan">{{jabatan}}</option>
+					</select>
+				</div>
+			</div>
+			
+			<br><br>
+			<a routerLink="/anjab" routerLinkActive="active">Analisis Jabatan</a>
+			
+			<br><br>
+			<h2>Jabatan yang Sudah Dianalisis</h2>
+			<div class="row">
+				<div class="col-xs-4">
+					<label for="skpd">SKPD</label>
+				</div>
+				<div class="col-xs-4">
+					<label for="jabatan">Jabatan</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					Badan Penanaman Modal Daerah Pelayanan Terpadu Satu Pintu
+				</div>
+				<div class="col-xs-4">
+					Pengolah Data Kepegawaian
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Lihat</button>
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Ubah</button>
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Hapus</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					Bagian Hukum
+				</div>
+				<div class="col-xs-4">
+					Pembantu Bendahara
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Lihat</button>
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Ubah</button>
+				</div>
+				<div class="col-xs-1">
+					<button (click)="ABK()">Hapus</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>	
